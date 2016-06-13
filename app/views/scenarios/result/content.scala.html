@@ -1,0 +1,81 @@
+
+<section class="content-header">
+    <h1>
+        scenario.getTag
+    <small>scenario.getScenarioName</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">API</a></li>
+        <li class="active">Task</li>
+    </ol>
+</section>
+
+    <!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                @*<div class="box-header">*@
+                    @*<h3 class="box-title">接口列表</h3>*@
+                    @*<button class="btn btn-info btn-flat right" type="button" data-toggle="modal" data-target="#myAdd" ng-click="getApis('scenario.get_id()')">Edit</button>*@
+                    @*<button class="btn btn-info btn-flat right" type="button" ng-click="runTask('scenario.get_id()')">RUN</button>*@
+                    @*<button class="btn btn-info btn-flat right" type="button" data-toggle="modal" data-target="#myTask" ng-click="viewTasks()">Tasks</button>*@
+                @*</div><!-- /.box-header -->*@
+                <div class="box-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                if(scenario.getScenarioApis.isEmpty) {
+                                    <h1>Nothing to display</h1>
+                                } else {
+                                    <div class="panel-group" id="panel">
+                                    for(scenarioAPI <- scenario.getScenarioApis) {
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" ng-click="Check(scenarioAPI,scenarioAPI.getOrderNum)">
+                                                <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel" href="#panel-element_scenarioAPI.getOrderNum">
+                                                    <span>scenarioAPI.getOrderNum</span>
+                                                    <span>scenarioAPI.getRequest.getComment</span>
+                                                    <span>scenarioAPI.getRequest.getUrl</span>
+                                                    <span>scenarioAPI.getResponse.getStatus</span>
+                                                    <span>scenarioAPI.getResponse.getStatusText</span>
+                                                </a>
+                                            </div>
+                                            <div id="panel-element_scenarioAPI.getOrderNum" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            @*<div class="input-group margin" >*@
+                                                                @*<input type="text" class="btn btn-block btn-instagram" value="RESULT" ng-readonly="true">*@
+                                                                @*<span class="input-group-btn">*@
+                                                                    @*<button class="btn btn-info btn-flat" type="button" >CHECK</button>*@
+                                                                @*</span>*@
+                                                            @*</div>*@
+                                                            <table  style="overflow:auto;" border="0px" width="100%">
+                                                                <tr>
+                                                                    <td id="reslutMessage">
+                                                                        <div id="jsonFormate_scenarioAPI.getOrderNum" style="height:425px; overflow-y:auto; border:0px solid;"></div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    </div>                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+</section><!-- /.content -->

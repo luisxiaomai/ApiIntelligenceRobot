@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+#GET     /                    controllers.example.HomeController.index
+# An example controller showing how to use dependency injection
+#GET     /count               controllers.example.CountController.count
+# An example controller showing how to write asynchronous code
+#GET     /message             controllers.example.AsyncController.message
+
+
+#用户登录页面
+GET             /                                               controllers.HomeController.loginPage
+#用户注册页面
+GET             /registerPage                                   controllers.HomeController.registerPage
+#接口文档页面
+GET             /apiDocPage2                                     controllers.HomeController.apiDocPage2
+GET             /apiDocPage                                    controllers.HomeController.apiDocPage
+
+#接口设计添加页面
+GET             /apiDesignPage                                  controllers.HomeController.apiDesignPage
+#场景添加页面
+GET             /scenarioViewPage/:scenarioId                   controllers.HomeController.scenarioViewPage(scenarioId)
+#场景设置页面
+GET             /scenariosPage                                  controllers.HomeController.scenariosPage
+GET             /apiEditPage                                    controllers.HomeController.apiEditPage
+
+
+#用户操作
+GET             /user/:email/:pwd                               controllers.UserController.userLogin(email,pwd)
+PUT             /user                                           controllers.UserController.userUpdate
+POST            /user                                           controllers.UserController.userRegister
+DELETE          /user                                           controllers.UserController.userRemove
+GET             /userloginout                                  controllers.UserController.userSignout
+#接口文档操作
+GET             /apiDoc                                         controllers.ApiDocController.getApiDoc()
+GET             /apiDoc/:title/:version                         controllers.ApiDocController.getApiDocByTitleAndVersion(title,version)
+GET             /apiDocs                                        controllers.ApiDocController.getApiDocs()
+GET             /apiDocs/title/:title                           controllers.ApiDocController.getApiDocsByTitle(title)
+GET             /apiDocs/version/:version                       controllers.ApiDocController.getApiDocsByVersion(version)
+GET             /apiDoc/infos                                   controllers.ApiDocController.getApiDocInfos
+PUT             /apiDoc                                         controllers.ApiDocController.updateApiDoc()
+POST            /apiDoc                                         controllers.ApiDocController.addApiDoc()
+DELETE          /apiDoc/:apiId                                  controllers.ApiDocController.removeApiDocByApiId(apiId)
+GET             /apis                                           controllers.ApiDocController.getApis()
+GET             /apis/title/:title                              controllers.ApiDocController.getApisByTitle(title)
+GET             /apis/version/:version                          controllers.ApiDocController.getApisByVersion(version)
+GET             /apis/:title/:version                           controllers.ApiDocController.getApisByTitleAndVersion(title,version)
+
+
+#场景文档操作
+GET             /simplescenarios                         controllers.ScenarioController.getScenarioDocSimplifysByEmail()
+GET             /scenario/:scenarioId/apis               controllers.ScenarioController.getApisByScenarioId(scenarioId)
+GET             /scenario/:scenarioId                    controllers.ScenarioController.getScenariosByScenarioId(scenarioId)
+GET             /scenario                                controllers.ScenarioController.getScenariosByEmailOne()
+GET             /scenarios                               controllers.ScenarioController.getScenariosByEmail()
+GET             /scenarios/tagName/:tagName              controllers.ScenarioController.getScenariosByEmailAndTagName(email,tagName)
+GET             /scenarios/scenarioName/:scenarioName    controllers.ScenarioController.getScenariosByEmailAndTitle(email,scenarioName)
+GET             /scenarios/:tagName/:scenarioName        controllers.ScenarioController.getScenariosByEmailTagNameAndTitle(email,tagName,scenarioName)
+GET             /scenarios/infos                         controllers.ScenarioController.getScenarioInfosByEmail
+
+POST            /scenario                                controllers.ScenarioController.addScenario
+#PUT             /scenario                                controllers.ScenarioController.updateScenario
+PUT             /scenario/:scenarioId/apis               controllers.ScenarioController.updateScenario(scenarioId)
+PUT             /scenario/:scenarioId/dependon           controllers.ScenarioController.updateScenarioByDependsOn(scenarioId)
+
+DELETE          /scenario/:scenarioId                    controllers.ScenarioController.removeScenarioByscenarioId(scenarioId)
+GET             /scenario/:scenarioId/sendrequest        controllers.ScenarioController.sendRequestByScenarioId(scenarioId)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+
+

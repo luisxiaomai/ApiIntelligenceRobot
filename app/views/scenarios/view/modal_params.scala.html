@@ -1,0 +1,55 @@
+
+<div class="example-modal" >
+    <div class="modal modal-info" id="myParams">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">任务信息</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12" style="overflow:auto;height: 400px;">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>idScenario</th>
+                                            <th>idUser</th>
+                                            <th>startTime</th>
+                                            <th>status</th>
+                                        </tr>
+                                        @*<tr ng-repeat="taskInfo in TaskInfos | orderBy:'_id'">*@
+                                            @*<td colspan="1">*@
+                                                @*<button type="button" ng-click="" class="btn btn-default btn-sm">*@
+                                                    @*<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>*@
+                                                @*</button>*@
+                                                @*<button type="button" ng-click="" class="btn btn-default btn-sm">*@
+                                                    @*<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>*@
+                                                @*</button>*@
+                                            @*</td>*@
+                                            @*<td>{{ taskInfo.idScenario }}</td>*@
+                                            @*<td>{{ taskInfo.idUser }}</td>*@
+                                            @*<td>{{ taskInfo.startTime }}</td>*@
+                                            @*<td>{{ taskInfo.status }}</td>*@
+                                        @*</tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

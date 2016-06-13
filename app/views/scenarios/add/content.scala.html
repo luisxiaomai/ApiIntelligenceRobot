@@ -1,0 +1,101 @@
+<section class="content-header">
+    <h1><b>
+        场景列表
+    </b>
+    </h1>
+</section>
+
+<section class="content">
+    @*<div class="row">*@
+        @*<div class="col-lg-6 col-xs-6">*@
+            @*<div class="form-group">*@
+                @*<select ng-options="simpleScenario.tagName for simpleScenario in simpleScenarios" ng-model="simpleScenario" class="form-control" style="width : 100% ;">*@
+                    @*<option value="">标签名称</option>*@
+                @*</select>*@
+            @*</div>*@
+        @*</div>*@
+    @*</div>*@
+    <div class="row">
+        <div ng-repeat="simpleScenario in simpleScenarios">
+            <a href="/scenarioViewPage/{{simpleScenario._id}}">
+                <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h4>{{simpleScenario.scenarioName}}</h4>
+                            <p>{{simpleScenario.tagName}}</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-open"></i>
+                        </div>
+                        <p class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></p>
+                    </div>
+                </div> <!-- ./col -->
+            </a>
+        </div>
+        <a href="#" data-toggle="modal" data-target="#addScenario">
+            <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                <div class="small-box bg-aqua-gradient">
+                    <div class="inner">
+                        <h4>Add</h4>
+                        <p>version</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-android-add"></i>
+                    </div>
+                    <p class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></p>
+                    @*<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>*@
+                </div>
+            </div><!-- ./col -->
+        </a>
+    </div>
+</section>
+
+@*<section class="content">*@
+    @*<div class="row">*@
+        @*<div class="col-lg-6 col-xs-6">*@
+            @*<div class="form-group">*@
+                @*<select ng-options="scenarioTag._id for scenarioTag in scenarioTagNames" ng-model="scenarioTag" class="form-control" style="width : 100% ;">*@
+                    @*<option value="">项目名称</option>*@
+                @*</select>*@
+            @*</div>*@
+        @*</div>*@
+    @*</div>*@
+    @*<div class="row">*@
+        @*<div ng-repeat="scenarioTag in scenarioTagNames">*@
+                @*<a href="#" ng-repeat="scenarioName in scenarioTag.scenarioNames">*@
+                    @*<div class="col-lg-3 col-xs-6">*@
+                            @*<!-- small box -->*@
+                        @*<div class="small-box bg-aqua">*@
+                            @*<div class="inner">*@
+                                @*<h4>{{scenarioName}}</h4>*@
+                                @*<p>{{scenarioTag._id}}</p>*@
+                            @*</div>*@
+                            @*<div class="icon">*@
+                                @*<i class="ion ion-android-open"></i>*@
+                            @*</div>*@
+                            @*<p class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></p>*@
+                        @*</div>*@
+                    @*</div> <!-- ./col -->*@
+                @*</a>*@
+        @*</div>*@
+    @*<a href="#" data-toggle="modal" data-target="#addScenario">*@
+        @*<div class="col-lg-3 col-xs-6">*@
+                @*<!-- small box -->*@
+            @*<div class="small-box bg-aqua-gradient">*@
+                @*<div class="inner">*@
+                    @*<h4>Add</h4>*@
+                    @*<p>version</p>*@
+                @*</div>*@
+                @*<div class="icon">*@
+                    @*<i class="ion ion-android-add"></i>*@
+                @*</div>*@
+                @*<p class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></p>*@
+                @*<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>*@
+            @*</div>*@
+        @*</div><!-- ./col -->*@
+    @*</a>*@
+    @*</div>*@
+@*</section>*@
+

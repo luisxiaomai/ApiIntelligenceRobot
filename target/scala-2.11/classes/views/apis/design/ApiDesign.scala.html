@@ -1,0 +1,83 @@
+@import models.users.UserInfo
+@(userInfo:UserInfo)
+<!DOCTYPE html>
+<html ng-app="ApiOperateApp">
+    <head>
+        <title>APIDesign</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("dist/css/skins/_all-skins.min.css")">
+
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+            <!-- Font Awesome -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("awesome/css/font-awesome.min.css")">
+
+            <!-- Ionicons -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("ionicons/css/ionicons.min.css")">
+
+            <!-- Theme style -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("dist/css/AdminLTE.min.css")">
+
+
+        <link rel="stylesheet" href="@routes.Assets.versioned("jsoneditor/jsoneditor.css")">
+
+        <script src="@routes.Assets.versioned("jsoneditor/jsoneditor.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("angular/angular.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("jsoneditor/ng-jsoneditor.js")"></script>
+
+        <script src="@routes.Assets.versioned("custom/angular/ApiOperateApp.js")"></script>
+        <script src="@routes.Assets.versioned("custom/swagger/swagger-parser.js")"></script>
+
+
+    </head>
+    <body class="skin-blue sidebar-mini sidebar-collapse" data-spy="scroll" data-target="#scrollspy" ng-controller="ApiDesignController">
+        <div class="wrapper">
+
+            <header class="main-header">
+                @views.html.commons.head(userInfo,"Design","/apiDocPage")
+            </header>
+                <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                    <!-- sidebar: style can be found in sidebar.less -->
+                @views.html.apis.design.left_nav()
+                    <!-- /.sidebar -->
+            </aside>
+
+                <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                @views.html.apis.design.content()
+
+            </div><!-- /.content-wrapper -->
+
+            <!-- Main Footer -->
+            @views.html.commons.foot()
+            <!-- /.Main Footer -->
+            <!-- Control Sidebar -->
+            <!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div><!-- ./wrapper -->
+
+        <!-- modal-content -->
+        @views.html.apis.design.modal_add_guide()
+
+        <script src="@routes.Assets.versioned("plugins/jQuery/jQuery-2.1.4.min.js")"></script>
+            <!-- Bootstrap 3.3.5 -->
+        <script src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+            <!-- AdminLTE App -->
+        <script src="@routes.Assets.versioned("dist/js/app.min.js")"></script>
+            <!-- SlimScroll -->
+        <script src="@routes.Assets.versioned("plugins/slimScroll/jquery.slimscroll.min.js")"></script>
+            <!-- FastClick -->
+        <script src="@routes.Assets.versioned("plugins/fastclick/fastclick.min.js")"></script>
+            <!-- AdminLTE for demo purposes -->
+        <script src="@routes.Assets.versioned("dist/js/demo.js")"></script>
+        <script src="@routes.Assets.versioned("jsonformater/jsonFormater.js")"></script>
+        <script src="@routes.Assets.versioned("plugins/select2/select2.full.min.js")"></script>
+    </body>
+</html>
+

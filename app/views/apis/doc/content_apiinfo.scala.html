@@ -1,0 +1,92 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1><b>
+            {{apiDoc.info.description}}
+            <small>{{apiDoc.info.version}}</small>
+        </b>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> {{apiDoc.info.title}} </a></li>
+        </ol>
+    </section>
+
+
+    <section class="content">
+        <div ng-repeat="(path,operation) in apiDoc.paths">
+            <div ng-repeat="(method,apiInfo) in operation">
+
+                <div class="box box-default collapsed-box">
+                    <div class="box-header with-border">
+                            <span class="col-lg-3">{{apiInfo.summary}}</span>
+                            <span class="col-lg-2">{{method}}</span>
+                            <span>{{apiDoc.host}}{{apiDoc.basePath}}{{path}}</span>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        </div> <!-- /.box-tools -->
+                    </div> <!-- /.box-header -->
+                    <div class="box-body">
+                        <h3><b>参数列表:</b></h3>
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th> Name </th>
+                                    <th> Type </th>
+                                    <th> Required </th>
+                                    <th> Description </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="paramter in apiInfo.parameters">
+                                    <td> {{paramter.name}} </td>
+                                    <td> {{paramter.type}} </td>
+                                    <td> {{paramter.required}} </td>
+                                    <td> {{paramter.description}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3><b>返回格式:</b></h3>
+                        <pre class="hierarchy bring-up">
+                            <code class="language-bash" data-lang="bash">{{apiInfo.responses | json}}</code>
+                        </pre>
+                    </div> <!-- /.box-body -->
+                </div> <!-- /.box -->
+            </div>
+        </div>
+    </section> <!-- /.content -->
+
+
+    <!-- Main content -->
+    <!--
+    <section class="content">
+        <div ng-repeat="(path,operation) in apiDoc.paths">
+            <div ng-repeat="(method,apiInfo) in operation">
+                <pre class="hierarchy bring-up"><b>{{apiInfo.summary}}</b> <strong>{{method}}</strong>
+                    {{apiDoc.host}}{{apiDoc.basePath}}{{path}}</pre>
+                <h3><b>参数列表:</b></h3>
+                <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Type </th>
+                            <th> Required </th>
+                            <th> Description </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="paramter in apiInfo.parameters">
+                            <td> {{paramter.name}} </td>
+                            <td> {{paramter.type}} </td>
+                            <td> {{paramter.required}} </td>
+                            <td> {{paramter.description}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3><b>返回格式:</b></h3>
+                <pre class="hierarchy bring-up">
+                    <code class="language-bash" data-lang="bash">{{apiInfo.responses | json}}</code>
+                </pre>
+            </div>
+        </div>
+    </section> <!-- /.content -->

@@ -1,0 +1,112 @@
+
+<div class="modal modal-info" id="myRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">RULES</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="overflow:auto;max-height: 350px">
+                                <table id="viewChecks" class="table table-condensed" style="width: 100%">
+                                    <tbody>
+                                        <tr ng-repeat="check in OrderNumChecks">
+                                            <td class="col-md-3"><input type="text" class="form-control" value="{{check.field}}"></td>
+                                            <td>
+                                                <select id="CheckMethodSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">
+                                                    <option ng-selected="true">{{check.checkMethod}}</option>
+                                                    <option>Save</option>
+                                                    <option>Equal</option>
+                                                    <option>TypeOf</option>
+                                                    <option>Diff</option>
+                                                    <option>Contain</option>
+                                                    <option>Random</option>
+                                                </select>
+                                            </td>
+                                            <td class="col-md-3"><input type="text" class="form-control" value="{{check.targetField}}"></td>
+                                            <td class="col-md-3"><input type="text" class="form-control" value="{{check.expect}}"></td>
+                                        </tr>
+                                        @*<tr>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="FieldSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">fiele1</option>*@
+                                                    @*<option>field2</option>*@
+                                                    @*<option>field3</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="TargetFieldSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">fiele1</option>*@
+                                                    @*<option>field2</option>*@
+                                                    @*<option>field3</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="CheckMethodSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">Save</option>*@
+                                                    @*<option>Equal</option>*@
+                                                    @*<option>TypeOf</option>*@
+                                                    @*<option>Diff</option>*@
+                                                    @*<option>Contain</option>*@
+                                                    @*<option>Random</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width : 100% ;">*@
+                                                    @*<option>AAAA</option>*@
+                                                    @*<option>BBBB</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                        @*</tr>*@
+                                        @*<tr>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="FieldSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">fiele1</option>*@
+                                                    @*<option>field2</option>*@
+                                                    @*<option>field3</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="TargetFieldSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">fiele1</option>*@
+                                                    @*<option>field2</option>*@
+                                                    @*<option>field3</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select id="CheckMethodSelect" class="form-control select2" style="width: 100%;" ng-model="SchemeSelect">*@
+                                                    @*<option ng-selected="true">Save</option>*@
+                                                    @*<option>Equal</option>*@
+                                                    @*<option>TypeOf</option>*@
+                                                    @*<option>Diff</option>*@
+                                                    @*<option>Contain</option>*@
+                                                    @*<option>Random</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                            @*<td colspan="3">*@
+                                                @*<select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width : 100% ;">*@
+                                                    @*<option>AAAA</option>*@
+                                                    @*<option>BBBB</option>*@
+                                                @*</select>*@
+                                            @*</td>*@
+                                        @*</tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" ng-click="addCheck()">Add</button>
+                <button type="button" class="btn btn-outline" data-dismiss="modal" ng-click="saveChecks()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
